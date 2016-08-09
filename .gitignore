@@ -1,0 +1,12 @@
+# We don't store in git the content of data
+# **This has to be transmitted to server**
+/data
+
+# Exclude output
+/dev
+/prod
+
+# User specific config
+/config/config.sh
+/config/dev
+/config/prod
