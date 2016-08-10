@@ -1,0 +1,121 @@
+[front.build]
+apache_base_path = "/"
+api_url = "//{portal}.{domain}/api"
+devices = ["index", "embed", "mobile"]
+feedback_recipient = 'support@{domain}'
+public_url = "//{portal}.{domain}/api/files"
+# Keep trailing slash!
+public_resource_url = "http://cds.{domain}/"
+
+[front.default_values]
+elevation_model = 'MNT50'
+external_wms_hostnames =  []
+lang = 'en'
+resolution = 500.0
+resolutions = [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0, 2.5, 2.0, 1.0, 0.5, 0.25, 0.1]
+
+
+# geo-front3 specific configuration (not mf-geoadmin3)
+[front.gf3]
+allow_infobox = false
+allow_offline = false
+allow_webdav = false
+[front.gf3.styles.hlFill]
+color = [255.0, 128.0, 0.0, 0.5]
+[front.gf3.styles.hlStroke]
+color = [255.0, 128.0, 0.0, 0.5]
+width = 3
+
+
+[geoportal]
+default_to_secondary_epsg_url = 'https://geodesy.geo.admin.ch/reframe/lv95tolv03'
+# EPSG 2056 -> CH1903+/MN95 (avec altitude)
+epsg = "EPSG:2056"
+epsg_context_popup_title = 'CH1903+ / LV95'
+epsg_extent = [2485071.58, 1075346.31, 2828515.82, 1299941.79]
+langs = ["fr", "de", "en"]
+imagetype = "PNG"
+maxsize = 4000
+secondary_epsg = "EPSG:21781"
+secondary_epsg_extent = [420000, 30000, 900000, 350000]
+secondary_epsg_context_popup_title = 'CH1903 / LV03'
+size = [800, 800]
+srid = 2056
+
+
+[mapserver]
+# Only use on dev host
+# You must specify ?MAP= for the URL to work properly
+OWS_STAGING_URL = "http://localhost:8888/cgi-bin/mapserv?MAP="
+PORTAL_BASE_OWS = "http://{portal}.{domain}/ows/{portal}?"
+# Used for remote wms input
+PORTAL_IMAGEPATH = "/tmp"
+PORTAL_WMS_VERSION = "1.3.0"
+PORTAL_ALLOWED_IP = "0.0.0.0/0 ::/0"
+PORTAL_DENIED_IP = ""
+
+[mapserver.metadata]
+contact = { email = 'contact+{portal}@{domain}', name = '{portal}' }
+ows_inspire_resourcelocator = ''
+ows_inspire_keyword = 'infoMapAccessService'
+# Can be an empty list to use only one language.
+ows_languages = ['en', 'fr', 'de']
+ows_onlineresource = 'http://{portal}.{domain}/ows/{portal}?'
+# If ows_languages is empty, it must be a string (the value of the title).
+ows_title = { en = 'Demo WMS server for {portal}', fr = 'Serveur WMS de démonstration pour {portal}', de = 'Demo WMS server für {portal}' }
+# If ows_languages is empty, it must be a string (the value of the abstract).
+ows_abstract = { en = 'WMS server for {portal}', fr = 'Serveur WMS pour {portal}', de = 'WMS server für {portal}' }
+ows_enable_request = ['*']
+ows_srs = ['EPSG:3857', 'EPSG:21781', 'EPSG:2056']
+
+
+[layers]
+single_tiles_by_default = false
+
+
+[print]
+defaultTitle = "{portal}"
+fileName = "{portal}"
+fileSuffix = "-${{yyyy-MM-dd-hh-ss}}"
+# formats must be capitalized
+formats = ["A4", "A3"]
+orientations = ["portrait", "landscape"]
+maxDpi = 300
+dpiSuggestions = [150, 300]
+scales = [75000, 50000, 20000, 10000, 7500, 5000, 2000, 1000, 500]
+northArrowSize = 50
+northArrowGraphics = "file://NorthArrow.svg"
+pdf_author = "{portal}"
+pdf_compression = true
+pdf_creator = "MapFish Print"
+pdf_subject = "A Map"
+url = "https://{portal}.{domain}"
+url_title = "https://{portal}.{domain}"
+
+
+[search]
+sphinx_sql_host = "localhost"
+sphinx_sql_user = "geo_searchd"
+sphinx_sql_pass = "azerty"
+sphinx_sql_port = 5432
+sphinxhost = "localhost"
+sphinxport = 9314
+# No trailing slash
+conf_dir = "/var/lib/geoportal"
+
+[search.origins_to_ranks]
+# this part need to be in sync with geo-api3/config/config.dist.toml
+places = 6
+buildings = 9
+
+
+[vhost]
+api_proxy = 'http://localhost:9080'
+certificate_file = ''
+certificate_chain_file = ''
+domain = 'geoportal.local'
+certificate_key_file = ''
+# Keep trailing slash!
+ows_path = '~/geoportal-infras/cgi-bin/'
+print_proxy = 'ajp://localhost:8009'
+server_name = '{portal}.{domain}'

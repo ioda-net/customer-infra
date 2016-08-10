@@ -1,0 +1,21 @@
+{
+    "backgroundLayers": [
+        "voidLayer",
+        "natural"
+    ],
+    "langs": [
+        "en",
+        "fr",
+        "de"
+    ],
+    "name": "Topic 2",
+    "selectedLayers": [
+        "buildings",
+        "waterways"
+    ],
+    "catalog": [
+        "waterways",
+        "buildings",
+        "landuse"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "backgroundLayers": [
+        "voidLayer",
+        "landuse"
+    ],
+    "langs": [
+        "en",
+        "fr",
+        "de"
+    ],
+    "name": "Topic 1",
+    "selectedLayers": [
+        "places",
+        "buildings",
+        "roads"
+    ],
+    "catalog": [
+        "places",
+        "buildings",
+        "roads"
+    ]
+}

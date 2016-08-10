@@ -1,0 +1,26 @@
+# The section and keys listed here are allowed in portal configuration files.
+
+[front.default_values]
+topic_id = ''
+
+
+[geoportal]
+extent = [0, 0, 0, 0]
+name = ""
+
+
+[layers]
+background_layers_ids = ['', '']
+default_tiling_exceptions = ['places']
+default_background_opacity = 0.65
+default_layer_attribution = "OpenStreet Maps"
+default_layer_attribution_url = "http://www.openstreetmap.org/"
+
+
+[print]
+url = ""
+url_title = ""
+
+
+[search]
+locations = ['', '']

@@ -1,0 +1,24 @@
+[front.default_values]
+topic_id = 'topic1'
+
+
+[geoportal]
+extent = [2485071.58, 1075346.31, 2828515.82, 1299941.79]
+name = "demo"
+
+
+[layers]
+background_layers_ids = ['landuse', 'nature']
+default_tiling_exceptions = ['places']
+default_background_opacity = 0.65
+default_layer_attribution = "OpenStreet Maps"
+default_layer_attribution_url = "http://www.openstreetmap.org/"
+
+
+[print]
+url = "https://{portal}.{domain}"
+url_title = "https://{portal}.{domain}"
+
+
+[search]
+locations = ['places', 'buildings']

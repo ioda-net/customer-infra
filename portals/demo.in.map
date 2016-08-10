@@ -1,0 +1,270 @@
+MAP
+    FONTSET "../../../../data/fonts.txt"
+    IMAGETYPE {{ geoportal.imagetype }}
+    SIZE {{ geoportal.size | join(' ') }}
+    MAXSIZE {{ geoportal.maxsize }}
+    UNITS DD
+    EXTENT {{ geoportal.extent | join(' ')}}
+    WEB
+        IMAGEPATH "/tmp/"
+        METADATA
+            "ows_inspire_capabilities"          "embed"
+            "ows_inspire_temporal_reference"    "{{ current_date }}"
+            "ows_inspire_mpoc_name"             "{{ mapserver.metadata.contact.name }}"
+            "ows_inspire_mpoc_email"            "{{ mapserver.metadata.contact.email }}"
+            "ows_inspire_metadatadate"          "{{ current_date }}"
+            "ows_inspire_resourcelocator"       "{{ mapserver.metadata.ows_inspire_resourcelocator }}" #URL for ResourceLocator
+            "ows_inspire_keyword"               "{{ mapserver.metadata.ows_inspire_keyword }}" #value according "classification of spatial data services"
+            "ows_languages"                     "{{ mapserver.metadata.ows_languages | join(',') }}"
+            {%- for lang, ows_title in mapserver.metadata.ows_title.items() %}
+            "ows_title.{{ lang }}"                     "{{ ows_title }}"
+            {%- endfor %}
+            {%- for lang, ows_abstract in mapserver.metadata.ows_abstract.items() %}
+            "ows_abstract.{{ lang }}"                  "{{ ows_abstract }}"
+            {%- endfor %}
+            "ows_onlineresource"                "{{ mapserver.metadata.ows_onlineresource }}"
+            "ows_srs"                           "{{ mapserver.metadata.ows_srs | join(' ') }}"
+            "ows_extent"                        "{{ geoportal.extent | join(' ') }}"
+            "ows_enable_request"                "{{ mapserver.metadata.ows_enable_request | join(' ') }}"
+        END
+    END
+    PROJECTION
+        "init={{ geoportal.epsg.lower() }}"
+    END
+
+
+    SYMBOL
+        NAME "circle_CFY04BOM9F"
+        TYPE ELLIPSE
+        FILLED TRUE
+        POINTS
+            1 1
+        END
+    END
+
+    SYMBOL
+        NAME "circle_41573H9DR9"
+        TYPE ELLIPSE
+        POINTS
+            1 1
+        END
+    END
+
+
+  LAYER
+    DATA "../../../../data/osm-switzerland/places.shp"
+    LABELITEM "name"
+    LABELMAXSCALEDENOM 10000000
+    LABELMINSCALEDENOM 1
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"5.9713338 45.8201187 10.4902656 47.8024502"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"places"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "places"
+    PROJECTION
+      "proj=longlat"
+      "datum=WGS84"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE POINT
+    UNITS METERS
+    CLASS
+      NAME "places"
+      LABEL
+        FONT "LiberationSans-Regular"
+        SIZE 17
+        BUFFER 3
+        ENCODING "utf-8"
+        OFFSET 0 0
+        POSITION AUTO
+        PRIORITY 5
+        SHADOWSIZE 1 1
+      END # LABEL
+      STYLE
+        COLOR 47 141 75
+        SIZE 7.559055118
+        SYMBOL "circle_CFY04BOM9F"
+      END # STYLE
+      STYLE
+        COLOR 0 0 0
+        SIZE 7.559055118
+        SYMBOL "circle_41573H9DR9"
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+  LAYER
+    DATA "../../../../data/osm-switzerland/buildings.shp"
+    MAXSCALEDENOM 272988.84
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"5.9561152 45.8176307 10.492264 47.804131"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"buildings"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "buildings"
+    PROJECTION
+      "proj=longlat"
+      "datum=WGS84"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+      NAME "buildings"
+      STYLE
+        COLOR 245 197 51
+      END # STYLE
+      STYLE
+        OUTLINECOLOR 0 0 0
+        WIDTH 0.98267716534
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+  LAYER
+    DATA "../../../../data/osm-switzerland/roads.shp"
+    MAXSCALEDENOM 68247.21
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"5.909072 45.8027032 10.5122311 47.8110184"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"roads"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "roads"
+    PROJECTION
+      "proj=longlat"
+      "datum=WGS84"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE LINE
+    UNITS METERS
+    CLASS
+      NAME "roads"
+      STYLE
+        COLOR 20 50 50
+        LINEJOIN ROUND
+        WIDTH 1.6
+      END # STYLE
+      STYLE
+        COLOR 94 146 148
+        LINEJOIN ROUND
+        WIDTH 13.45511811004
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+  LAYER
+    DATA "../../../../data/osm-switzerland/waterways.shp"
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"5.9216446 45.7249286 10.5445217 47.8350739"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"waterways"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "waterways"
+    PROJECTION
+      "proj=longlat"
+      "datum=WGS84"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE LINE
+    UNITS METERS
+    CLASS
+      NAME "waterways"
+      STYLE
+        COLOR 192 223 255
+        LINEJOIN ROUND
+        WIDTH 7.02992125974
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+  LAYER
+    DATA "../../../../data/osm-switzerland/natural.shp"
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"5.927209 45.8234761 10.5330172 47.8107358"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"natural"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "natural"
+    PROJECTION
+      "proj=longlat"
+      "datum=WGS84"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+      NAME "natural"
+      STYLE
+        COLOR 24 42 158
+      END # STYLE
+      STYLE
+        OUTLINECOLOR 0 0 0
+        WIDTH 0.98267716534
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+  LAYER
+    DATA "../../../../data/osm-switzerland/landuse.shp"
+    METADATA
+      "ows_include_items"	"all"
+      "ows_extent"	"5.9443775 45.8185014 10.487334 47.8066122"
+      "ows_srs"	"EPSG:4326"
+      "ows_title"	"landuse"
+      "wms_getfeatureinfo_formatlist"	"OGRGML"
+      "wms_bbox_extended"	"true"
+      "gml_include_items"	"all"
+    END # METADATA
+    NAME "landuse"
+    PROJECTION
+      "proj=longlat"
+      "datum=WGS84"
+      "no_defs"
+    END # PROJECTION
+    STATUS ON
+    TILEITEM "location"
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+      NAME "landuse"
+      STYLE
+        COLOR 112 161 124
+      END # STYLE
+      STYLE
+        OUTLINECOLOR 0 0 0
+        WIDTH 0.98267716534
+      END # STYLE
+    END # CLASS
+  END # LAYER
+END
