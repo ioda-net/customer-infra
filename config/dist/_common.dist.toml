@@ -100,8 +100,6 @@ sphinx_sql_pass = "azerty"
 sphinx_sql_port = 5432
 sphinxhost = "localhost"
 sphinxport = 9314
-# No trailing slash
-conf_dir = "/var/lib/geoportal"
 
 [search.origins_to_ranks]
 # this part need to be in sync with geo-api3/config/config.dist.toml
@@ -118,4 +116,6 @@ certificate_key_file = ''
 # Keep trailing slash!
 ows_path = '~/geoportal-infras/cgi-bin/'
 print_proxy = 'ajp://localhost:8009'
+# On dev, infra_dir is used instead. No trailing slash!
+prod_data_dir = '/var/lib/geoportal/data'
 server_name = '{portal}.{domain}'
