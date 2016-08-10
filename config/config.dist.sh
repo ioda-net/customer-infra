@@ -6,7 +6,7 @@
 # Production specific variables
 ## Host of the production database
 set-var PROD_HOST "demo.geoportal.prod"
-## Username used to connect to production server.
+## Username used to connect to production server with ssh
 set-var PROD_USER "geo_prod"
 ## Where are the git repos on the production server. These repos must no be bare repos, ie they
 ## contain the generated content.
@@ -27,7 +27,7 @@ set-var DATA_SRC "/var/geoportal/data/"
 set-var DATA_DEST "demo.geoportal.prod:/var/geoportal/data/"
 # To execute rsync commands on a remote shell, uncomment the line below
 # Never used set-var
-#export RSYNC_RSH="ssh -l geo_prod"
+#export RSYNC_RSH="ssh -l ${PROD_USER}"
 
 
 # Databsase
@@ -51,7 +51,7 @@ set-var DEFAULT_DB_SCHEMA_DUMP_FILE "/var/tmp/geo_dev_schema.sql"
 ## In db-ddl-track, in which git repo to commit the modifications.
 set-var DEFAULT_DB_REPO "~geo_dev/git/geo-db"
 ## PostgresQL role to use for superuser operation.
-set-var DEFAULT_DB_SUPER_USER "root"
+set-var DEFAULT_DB_SUPER_USER "postgres"
 ## PostgresQL role to which the database will be given on restaure.
 set-var DEFAULT_DB_OWNER "geo_dba"
 
