@@ -1,5 +1,8 @@
-# ONLY USE CONFIGURATION FOR PRODUCTION HERE.
-# THIS FILE IS ONLY LODED DURING 'manuel prod' AND 'manuel deploy'
+# ONLY USE CONFIGURATION FOR PRODUCTION AND MAPFISH_PRINT_DEPLOY.
+# THIS FILE IS ONLY LOADED DURING 'manuel prod' AND 'manuel deploy'
+# THIS FILE IS ALSO LOADED DURING 'manuel dev' TO GET PROPER LOCATION OF
+# MFP_APP_FOLDER (infra specific). FOR DEVELOPMENT, THIS IS MOST LIKELY
+# OVERRIDEN IN ./config.sh
 # ANY VALUES PRESENT HERE CAN BE OVERRIDEN IN ./config.sh
 
 
@@ -18,7 +21,7 @@ set-var PROD_BARE_GIT_REPOS_LOCATION "https://git.geoportal.prod/git/"
 set-var PROD_DEPLOY_BRANCH "devel"
 ## Where to copy generated MapFish Print applications (directory containing config.yaml, the
 ## templates and the images).
-set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print/print-apps/"
+set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print-customer-infra/print-apps/"
 
 
 # Rsync options
