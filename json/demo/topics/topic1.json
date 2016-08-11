@@ -1,7 +1,8 @@
 {
     "backgroundLayers": [
         "voidLayer",
-        "landuse"
+        "landuse",
+        "landsat"
     ],
     "langs": [
         "en",

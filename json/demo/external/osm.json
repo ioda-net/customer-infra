@@ -1,0 +1,19 @@
+{
+    "name": "landsat",
+    "crossOrigin": "undefined",
+    "label": "Landsat",
+    "attribution": "NASA",
+    "attributionUrl": "http://irs.gis-lab.info/",
+    "background": true,
+    "hasLegend": false,
+    "legendUrl": "",
+    "format": "png",
+    "type": "wms",
+    "epsg": "EPSG:4326",
+    "opacity": 0,
+    "layerBodId": "landsat",
+    "queryable": false,
+    "serverLayerName": "landsat",
+    "wmsLayers": "landsat",
+    "wmsUrl": "http://irs.gis-lab.info/"
+}

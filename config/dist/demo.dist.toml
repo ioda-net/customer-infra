@@ -8,7 +8,7 @@ name = "demo"
 
 
 [layers]
-background_layers_ids = ['landuse', 'nature']
+background_layers_ids = ['landuse', 'nature', 'landsat']
 default_tiling_exceptions = ['places']
 default_background_opacity = 0.65
 default_layer_attribution = "OpenStreet Maps"
