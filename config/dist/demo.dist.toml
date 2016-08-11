@@ -21,4 +21,4 @@ url_title = "https://{portal}.{domain}"
 
 
 [search]
-locations = ['places', 'buildings']
+locations = ['places']

@@ -94,17 +94,10 @@ url_title = "https://{portal}.{domain}"
 
 
 [search]
-sphinx_sql_host = "localhost"
-sphinx_sql_user = "geo_searchd"
-sphinx_sql_pass = "azerty"
-sphinx_sql_port = 5432
+# Use empty sql host not to configure a connection to postgresql to create search indexes.
+sphinx_sql_host = ""
 sphinxhost = "localhost"
 sphinxport = 9314
-
-[search.origins_to_ranks]
-# this part need to be in sync with geo-api3/config/config.dist.toml
-places = 6
-buildings = 9
 
 
 [vhost]
