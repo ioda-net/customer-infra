@@ -56,6 +56,7 @@ MAP
     LABELITEM "name"
     LABELMAXSCALEDENOM 10000000
     LABELMINSCALEDENOM 1
+    TEMPLATE "./data/osm_GetFeatureInfo_template.html"
     METADATA
       "ows_include_items"	"all"
       "ows_extent"	"5.9713338 45.8201187 10.4902656 47.8024502"
