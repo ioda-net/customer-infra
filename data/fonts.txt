@@ -1,1 +1,2 @@
 LiberationSans-Regular /usr/share/fonts/liberation/LiberationSans-Regular.ttf
+LiberationSans-Regular /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
