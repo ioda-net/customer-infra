@@ -13,6 +13,7 @@ default_tiling_exceptions = ['places']
 default_background_opacity = 0.65
 default_layer_attribution = "OpenStreet Maps"
 default_layer_attribution_url = "http://www.openstreetmap.org/"
+force_non_queryable = ['places']
 
 
 [print]
