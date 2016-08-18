@@ -59,6 +59,11 @@ set-var DEFAULT_DB_SUPER_USER "postgres"
 set-var DEFAULT_DB_OWNER "geo_dba"
 
 
+# Front
+# DEFAULT_PORTAL is used to generate the test configuration with the proper plugins.
+set-var DEFAULT_PORTAL 'demo'
+
+
 # Misc
 ## In 'manuel features-reload' which URL must be requested to reload the features.
 set-var RELOAD_FEATURES_URL "http://demo.geoportal.local/api/features_reload"
