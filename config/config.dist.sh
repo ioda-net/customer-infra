@@ -57,6 +57,12 @@ set-var DEFAULT_DB_REPO "~geo_dev/git/geo-db"
 set-var DEFAULT_DB_SUPER_USER "postgres"
 ## PostgresQL role to which the database will be given on restaure.
 set-var DEFAULT_DB_OWNER "geo_dba"
+## PostgreSQL role used by MapServer to connect to the database. Used to correctly restore permissions in db-grant-updbate.
+set-var DEFAULT_DB_MAPSERVER_ROLE "geo_mapserver"
+## PostgreSQL role used by sphinxsearch to connect to the database. Used to correctly restore permissions in db-grant-updbate.
+set-var DEFAULT_DB_SEARCH_ROLE "geo_searchd"
+## PostgreSQL role used by the API to connect to the database. Used to correctly restore permissions in db-grant-updbate.
+set-var DEFAULT_DB_API_ROLE "geo_api"
 
 
 # Front
