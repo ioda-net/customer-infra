@@ -1,6 +1,7 @@
 [front.build]
 apache_base_path = "/"
 api_url = "//{portal}.{domain}/api"
+dev_host_regexp = '\.local$'
 devices = ["index", "embed", "mobile"]
 feedback_recipient = 'support@{domain}'
 public_url = "//{portal}.{domain}/api/files"
