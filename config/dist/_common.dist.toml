@@ -1,6 +1,7 @@
 [front.build]
 apache_base_path = "/"
 api_url = "//{portal}.{domain}/api"
+# Display a warning message to prevent use to share URLs of testing sites.
 dev_host_regexp = '\.local$'
 devices = ["index", "embed", "mobile"]
 feedback_recipient = 'support@{domain}'
@@ -21,6 +22,8 @@ resolutions = [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0, 2.5, 2.0, 1.0,
 allow_infobox = false
 allow_offline = false
 allow_webdav = false
+# Display the origin (eg places) with translation possibility next to the search results.
+display_origins = true
 [front.gf3.styles.hlFill]
 color = [255.0, 128.0, 0.0, 0.5]
 [front.gf3.styles.hlStroke]
