@@ -78,6 +78,10 @@ single_tiles_by_default = false
 
 
 [print]
+# Optionnal: change the size of the halo around printed text. Default to 1px.
+base_text_halo_size = 1
+# Optionnal: change the size of printed text. Default to 10px.
+base_text_size = 10
 defaultTitle = "{portal}"
 fileName = "{portal}"
 fileSuffix = "-${{yyyy-MM-dd-hh-ss}}"
