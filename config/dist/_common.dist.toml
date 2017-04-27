@@ -24,10 +24,16 @@ allow_offline = false
 allow_webdav = false
 # Display the origin (eg places) with translation possibility next to the search results.
 display_origins = true
+# Styles are optionnal. They are here set to their default value.
 [front.gf3.styles.hlFill]
 color = [255.0, 128.0, 0.0, 0.5]
 [front.gf3.styles.hlStroke]
 color = [255.0, 128.0, 0.0, 0.5]
+width = 3
+[front.gf3.styles.selectFill]
+color = [255.0, 255.0, 0.0, 0.75]
+[front.gf3.styles.selectStroke]
+color = [255.0, 128.0, 0.0, 1.0]
 width = 3
 
 
