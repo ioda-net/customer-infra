@@ -3,6 +3,7 @@ apache_base_path = "/"
 api_url = "//{portal}.{domain}/api"
 # Display a warning message to prevent use to share URLs of testing sites.
 dev_host_regexp = '\.local$'
+dev3d = false
 devices = ["index", "embed", "mobile"]
 feedback_recipient = 'support@{domain}'
 public_url = "//{portal}.{domain}/api/files"
