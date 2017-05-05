@@ -9,6 +9,8 @@ feedback_recipient = 'support@{domain}'
 public_url = "//{portal}.{domain}/api/files"
 # Keep trailing slash!
 public_resource_url = "http://cds.{domain}/"
+# This must end by a slash !
+terrain_provider = "//assets.agi.com/stk-terrain/world/"
 
 [front.default_values]
 elevation_model = 'MNT50'
